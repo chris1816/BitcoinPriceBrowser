@@ -1,8 +1,6 @@
 package com.example.data.network
 
-/*
-import com.example.n26androidchallenge.data.TasksDataSource
-
+import com.example.domain.TasksDataSource
 
 interface INetworkHelper {
     fun fetchPrice(
@@ -10,4 +8,4 @@ interface INetworkHelper {
         time: Int
     )
 
-}*/
+}

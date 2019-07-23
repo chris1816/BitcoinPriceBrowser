@@ -1,5 +1,6 @@
 package com.example.bitcoinpricebrowser.di.module
 
+import com.example.data.network.NetworkHelper
 import com.example.data.repository.PriceRepositoryImpl
 import dagger.Module
 import dagger.Provides
@@ -29,9 +30,9 @@ class ApiModule(private val baseUrl: String) {
         return PriceRepositoryImpl()
     }
 
- /*   @Singleton
+    @Singleton
     @Provides
     fun getNetworkHelper(): NetworkHelper {
         return NetworkHelper()
-    }*/
+    }
 }

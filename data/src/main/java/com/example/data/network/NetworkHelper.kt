@@ -1,7 +1,9 @@
-/*
 package com.example.data.network
 
 
+import com.example.data.network.retrofit.RetrofitFactory
+import com.example.domain.TasksDataSource
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import retrofit2.Retrofit
@@ -9,8 +11,12 @@ import java.lang.Exception
 
 open class NetworkHelper: INetworkHelper {
 
-    @Inject
-    lateinit var retrofit: Retrofit
+/*    @Inject
+    lateinit var retrofit: Retrofit*/
+
+    private val retrofit: Retrofit by lazy {
+        RetrofitFactory.getInstance()
+    }
 
     private val apiService: ApiService by lazy {
         retrofit.create(ApiService::class.java)
@@ -26,7 +32,7 @@ open class NetworkHelper: INetworkHelper {
     private var disposable: Disposable? = null
 
     init {
-        MyApplication.getDaggerComponent().injectRetrofitInstance(this)
+//        MyApplication.getDaggerComponent().injectRetrofitInstance(this)
     }
 
     override fun fetchPrice(
@@ -49,4 +55,4 @@ open class NetworkHelper: INetworkHelper {
             })
     }
 
-}*/
+}
